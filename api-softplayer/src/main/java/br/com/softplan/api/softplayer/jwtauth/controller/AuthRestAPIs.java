@@ -108,12 +108,7 @@ public class AuthRestAPIs {
         userRepository.save(user);
         return null;
     }
-    /*
-    @GetMapping(value="/usuario/{id}")
-    public Optional<User> getUsernameById(@PathVariable Long id) {
-    	return userRepository.findById(id);
-    }
-    */
+
     @GetMapping(value="/usuario/{id}")
     public Optional<User> getUsernameById(@PathVariable Long id) {
     	return userRepository.findById(id);

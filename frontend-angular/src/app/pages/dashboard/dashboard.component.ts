@@ -58,6 +58,10 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/pessoa']);
   }
 
+  goToChat() {
+    this.router.navigate(['/chat']);
+  }
+
   public updateOptions() {
     this.salesChart.data.datasets[0].data = this.data;
     this.salesChart.update();

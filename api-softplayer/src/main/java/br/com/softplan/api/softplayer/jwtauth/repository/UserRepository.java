@@ -1,11 +1,12 @@
 package br.com.softplan.api.softplayer.jwtauth.repository;
-
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import br.com.softplan.api.softplayer.chat.model.ChatInterno;
 import br.com.softplan.api.softplayer.jwtauth.model.User;
 
 @Repository
@@ -17,4 +18,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
 	User findByName(String jwtUser);
     @Query("select u from User u where u.id = ?1")
 	User findByIdUser(Long id);
+    
+    
+	@Query("SELECT u FROM User u WHERE u.id = :ID")
+	public User usuarioExiste(@Param("ID") Long id);
 }

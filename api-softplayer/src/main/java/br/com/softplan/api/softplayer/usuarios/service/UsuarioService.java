@@ -1,4 +1,4 @@
-package br.com.softplan.api.softplayer.usuarios.service;
+ package br.com.softplan.api.softplayer.usuarios.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,5 +32,13 @@ public class UsuarioService {
 			}
 		}
 		return listFiltro;
+	}
+	
+	public Boolean usuarioExiste(Long id) {
+		usuarioRepository.usuarioExiste(id);
+		if(id != null) {
+			return true;
+		}
+		return false;
 	}
 }

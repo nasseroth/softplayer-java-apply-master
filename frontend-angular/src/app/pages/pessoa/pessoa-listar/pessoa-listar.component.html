@@ -1,0 +1,60 @@
+<style>
+  .my-pagination /deep/ .ngx-pagination .current {
+    background: orange;
+  }
+  .pagination {
+    padding: 70px;
+    margin-bottom: 20px;
+    color: #666;
+    font: 14px/24px sans-serif;
+}
+.justify-content-center {
+    display: flex !important;
+    justify-content: center !important;
+    font: 14px/24px sans-serif;
+}
+</style>
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Pessoas</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">SEXO</th>
+                <th scope="col"><button (click)="goToInserirPessoa()" class="btn btn-sm btn-primary"
+                  style="color: white;">Inserir</button></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pessoa of pessoas | paginate: { id: 'page', itemsPerPage: 5, currentPage: pageAtual }">
+                <th>{{pessoa.username}}</th>
+                <th>{{pessoa.cpf}}</th>
+                <th>{{pessoa.sexo}}</th>
+                <th scope="col"><button (click)="alterarDados(pessoa)" class="btn btn-sm bg-gradient-danger"
+                  style="color: white;">Alterar</button></th>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <div class="col-11 justify-content-center">
+            <pagination-controls id="page" class="my-pagination" (pageChange)="pageAtual = $event"></pagination-controls>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,96 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+    </div>
+  </div>
+</div>
+<br>
+<div class="col-xl-12 order-xl-1">
+  <div class="card bg-secondary shadow">
+    <div class="card-header bg-white border-0">
+      <div class="row align-items-center">
+        <div class="col-8">
+          <h3 class="mb-0">Cadastro de Pessoa</h3>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="submitPessoa()">
+        <h6 class="heading-small text-muted mb-4">Dados</h6>
+        <div class="pl-lg-4">
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label class="form-control-label" for="input-username">Nome *</label>
+                <input type="text" maxlength="40" minlength="5" id="input-username" class="form-control form-control-alternative" name="username"
+                  required [(ngModel)]="pessoa.username">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label class="form-control-label" for="input-email">Email</label>
+                <input type="text" id="input-email" maxlength="40" minlength="5" class="form-control form-control-alternative" name="email" required
+                [(ngModel)]="pessoa.email">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label class="form-control-label" for="input-first-name">Senha *</label>
+                <input type="password" id="input-first-name" class="form-control form-control-alternative" name="password"
+                  required [(ngModel)]="pessoa.password">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label class="form-control-label" for="input-first-name">Data Nascimento *</label>
+                <input type="date" id="input-first-name" class="form-control form-control-alternative" name="dataNascimento"
+                  required [(ngModel)]="pessoa.dataNascimento">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label class="form-control-label" for="input-first-name">CPF *</label>
+                <input type="text" id="input-first-name" class="form-control form-control-alternative" name="cpfPessoa"
+                  required [dropSpecialCharacters]="false" mask="000.000.000-00" [(ngModel)]="pessoa.cpf">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label class="form-control-label" for="input-first-name">Naturalidade</label>
+                <input type="text" id="input-first-name" class="form-control form-control-alternative" name="naturalidade"
+                  required [(ngModel)]="pessoa.naturalidade">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label class="form-control-label" for="input-first-name">Nacionalidade </label>
+                <input type="text" id="input-first-name" class="form-control form-control-alternative" name="nacionalidade"
+                  required [(ngModel)]="pessoa.nacionalidade">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="form-group">
+                <label class="form-control-label" for="input-first-name">Sexo</label>
+                <select class="form-control" name="sexo"
+                required [(ngModel)]="pessoa.sexo">
+                  <option value="NAO_INFORMADO">NAO_INFORMADO</option>
+                  <option value="MASCULINO">MASCULINO</option>
+                  <option value="FEMININO">FEMININO</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 10px;">Campos com (*) são obrigatórios!</p>
+        <hr class="my-4" />
+        <button type="submit" class="btn btn-sm btn-primary" style="color: white;">Inserir</button>
+      </form>
+    </div>
+  </div>
+</div>

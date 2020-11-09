@@ -1,0 +1,135 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+  style="min-height: 600px; background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-danger opacity-8"></span>
+  <!-- Header container -->
+  <div class="container-fluid d-flex align-items-center">
+    <div class="row">
+      <div class="col-lg-7 col-md-10">
+        <h1 class="display-2 text-white">Olá, {{user.name}}</h1>
+        <p class="text-white mt-0 mb-5">Esta é a sua página de perfil. Você pode ver o progresso que fez no seu trabalho
+          e gerenciar seus projetos ou tarefas atribuídas</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 order-lg-2">
+            <div class="card-profile-image">
+              <a>
+                <img src="http://localhost:8080/api/auth/download/{{user.id}}">
+              </a>
+            </div>
+            <br><br>
+          </div>
+        </div>
+        <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+        </div>
+        <div class="card-body pt-0 pt-md-4">
+          <div class="row">
+          </div>
+          <div class="text-center">
+            <h3>
+              {{user.name}}
+            </h3>
+            <div class="h5 font-weight-300">
+              <i class="ni location_pin mr-2"></i>{{user.email}}
+            </div>
+            <div class="h5 mt-4">
+              <i class="ni business_briefcase-24 mr-2"></i>{{user.profissaoDesignada}}
+            </div>
+            <hr class="my-4" />
+            <input type="file" multiple accept='image/*' id="file" class="btn btn-sm btn-default float-right"
+              (change)="selectFile($event)">
+            <br>
+            <br>
+            <button type="submit" (click)="upload()" class="btn btn-sm btn-primary"
+              style="color: white;">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Informações</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="alterar()">
+            <h6 class="heading-small text-muted mb-4">Seus dados</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Username</label>
+                    <input type="text" id="input-username" class="form-control form-control-alternative"
+                      placeholder="Username" name="username" [(ngModel)]="user.username" disabled="">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email</label>
+                    <input type="email" id="input-email" class="form-control form-control-alternative" name="email"
+                      [(ngModel)]="user.email" disabled="">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">Nome completo</label>
+                    <input type="text" id="input-first-name" class="form-control form-control-alternative" name="nome"
+                      [(ngModel)]="user.name">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">Profissão</label>
+                    <input type="text" id="input-first-name" class="form-control form-control-alternative"
+                      name="profissao" [(ngModel)]="user.profissaoDesignada">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <button type="submit" class="btn btn-sm btn-primary" style="color: white;">Atualizar</button>
+            <hr class="my-4" />
+          </form>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="alterarSenha()">
+            <h6 class="heading-small text-muted mb-4">Alterar Senha</h6>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">Senha</label>
+                    <input type="password" id="input-first-name" class="form-control form-control-alternative"
+                      name="senhaAntiga" [(ngModel)]="senhaAntiga">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-first-name">Confirmar Senha</label>
+                    <input type="password" id="input-first-name" class="form-control form-control-alternative"
+                      name="novaSenha" [(ngModel)]="novaSenha">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr class="my-4" />
+            <button type="submit" class="btn btn-sm btn-primary" style="color: white;">Alterar Senha</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

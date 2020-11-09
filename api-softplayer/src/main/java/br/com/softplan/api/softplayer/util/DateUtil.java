@@ -1,4 +1,5 @@
 package br.com.softplan.api.softplayer.util;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;

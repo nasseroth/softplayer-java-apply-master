@@ -33,34 +33,4 @@ public class UsuarioService {
 		}
 		return listFiltro;
 	}
-	
-	public List<User> listaUsuariosSemAdm() {
-		List<User> list2 = usuarioRepository.findAll();
-		List<User> listPrincipal = usuarioRepository.findAll();
-		for(User x : listPrincipal) {
-			for(Role r : x.getRoles()) {
-				if(r.getName() == RoleName.ROLE_ADMIN) {
-					list2.remove(x);
-				}
-			}
-		}
-		return list2;
-	}
-	
-	public User tonarAdministrador(Long id) {
-		User user = usuarioRepository.findByIdUser(id);
-		Role e = new Role();
-		e = roleRepository.findByIdRole((long) 2);
-		user.getRoles().add(e);
-		return usuarioRepository.save(user);
-	}
-	
-	public User removerAdministrador(Long id) {
-		User user = usuarioRepository.findByIdUser(id);
-		Role e = new Role();
-		e = roleRepository.findByIdRole((long) 2);
-		user.getRoles().remove(e);
-		return usuarioRepository.save(user);
-	}
-	
 }

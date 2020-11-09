@@ -1,10 +1,4 @@
 package br.com.softplan.api.softplayer.jwtauth.model;
-import javax.validation.constraints.NotEmpty;
-
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.br.CPF;
-
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,6 +13,10 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.br.CPF;
 
 import br.com.softplan.api.softplayer.jwtauth.enums.SexoEnum;
 import br.com.softplan.api.softplayer.util.DateUtil;
@@ -32,7 +30,7 @@ import lombok.NoArgsConstructor;
             "username"
         }),
         @UniqueConstraint(columnNames = {
-            "email"
+            "cpf"
         })
 })
 public class User{

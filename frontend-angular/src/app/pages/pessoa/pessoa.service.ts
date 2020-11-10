@@ -3,12 +3,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../../pages/usuario/model/user.model';
 
-const urlApiUser = 'http://localhost:8080/api/ti/usuario/administrador/';
-const urlApiInserirUser = 'http://localhost:8080/api/ti/usuario/administrador/';
-const urlApiAlterar = 'http://localhost:8080/api/auth/alterar';
-const urlApiInserir = 'http://localhost:8080/api/auth/signup';
-const urlApiConsultar = 'http://localhost:8080/api/auth/usuario/';
-const urlApiExcluir = 'http://localhost:8080/api/ti/usuario/administrador';
+const urlApiUser = 'https://softplan-softplayer.herokuapp.com/api/ti/usuario/administrador/';
+const urlApiInserirUser = 'https://softplan-softplayer.herokuapp.com/api/ti/usuario/administrador/';
+const urlApiAlterar = 'https://softplan-softplayer.herokuapp.com/api/auth/alterar';
+const urlApiInserir = 'https://softplan-softplayer.herokuapp.com/api/auth/signup';
+const urlApiConsultar = 'https://softplan-softplayer.herokuapp.com/api/auth/usuario/';
+const urlApiExcluir = 'https://softplan-softplayer.herokuapp.com/api/ti/usuario/administrador';
 
 @Injectable({
   providedIn: 'root'

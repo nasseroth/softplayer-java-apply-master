@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './model/user.model';
 
-const urlApiUser = 'http://localhost:8080/api/ti/usuario/administrador';
-const urlApiInserirUser = 'http://localhost:8080/api/ti/pessoa/';
+const urlApiUser = 'https://softplan-softplayer.herokuapp.com/api/ti/usuario/administrador';
+const urlApiInserirUser = 'https://softplan-softplayer.herokuapp.com/api/ti/pessoa/';
 @Injectable({
   providedIn: 'root'
 })

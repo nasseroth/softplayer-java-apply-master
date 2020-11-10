@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { User } from './model/user.model';
 import { Observable } from 'rxjs';
 
-const urlApiDashboard = 'http://localhost:8080/api/auth/usuario/';
+const urlApiDashboard = 'https://softplan-softplayer.herokuapp.com/api/auth/usuario/';
 
 @Injectable({
   providedIn: 'root'

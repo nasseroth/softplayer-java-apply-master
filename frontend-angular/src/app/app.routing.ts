@@ -1,3 +1,4 @@
+import { ChatListarComponent } from './pages/chat/chat-listar/chat-listar/chat-listar.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
@@ -11,10 +12,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { PessoaMenuComponent } from './pages/pessoa/pessoa-menu/pessoa-menu.component';
 import { PessoaListarComponent } from './pages/pessoa/pessoa-listar/pessoa-listar.component';
-import { DepartamentoListarComponent } from './pages/pessoa/departamento-listar/departamento-listar.component';
 import { PessoaCadastrarComponent } from './pages/pessoa/pessoa-cadastrar/pessoa-cadastrar.component';
-import { DepartamentoCadastrarComponent } from './pages/pessoa/departamento-cadastrar/departamento-cadastrar.component';
-import { UsuarioAdministrarComponent } from './pages/usuario/usuario-administrar/usuario-administrar.component';
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes =[
@@ -36,12 +34,9 @@ const routes: Routes =[
       { path: 'user-profile', component: UserProfileComponent },
       { path: 'pessoa-menu', component: PessoaMenuComponent },
       { path: 'pessoa', component: PessoaListarComponent },
-      { path: 'departamento', component: DepartamentoListarComponent },
-      { path: 'departamento/novo', component: DepartamentoCadastrarComponent },
-      { path: 'departamento/:id', component: DepartamentoCadastrarComponent },
       { path: 'pessoa/:id', component: PessoaCadastrarComponent },
       { path: 'pessoa/novo', component: PessoaCadastrarComponent },
-      { path: 'usuarios', component: UsuarioAdministrarComponent },
+      { path: 'chat', component: ChatListarComponent },
     ]
   },
 

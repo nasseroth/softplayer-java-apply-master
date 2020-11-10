@@ -33,6 +33,10 @@ public class UsuarioService {
 		}
 		return listFiltro;
 	}
+
+	public void deletar(Long id) {
+		usuarioRepository.deleteById(id);
+	}
 	
 	public Boolean usuarioExiste(Long id) {
 		usuarioRepository.usuarioExiste(id);

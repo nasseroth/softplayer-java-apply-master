@@ -14,9 +14,9 @@ export class NavbarComponent implements OnInit {
   public focus;
   public listTitles: any[];
   public location: Location;
-  constructor(location: Location,  
-              private element: ElementRef, 
-              private router: Router, 
+  constructor(location: Location,
+              private element: ElementRef,
+              private router: Router,
               private dashService: DashboardService) {
     this.location = location;
   }
@@ -56,10 +56,5 @@ export class NavbarComponent implements OnInit {
       }
     )
   }
-
-  submitQuery() {
-    window.open('https://www.bing.com/search?q='+this.query, '_blank');
-  }
-
 
 }

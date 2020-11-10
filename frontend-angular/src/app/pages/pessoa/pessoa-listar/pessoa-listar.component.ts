@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PessoaService } from '../pessoa.service';
 import { User } from '../../usuario/model/user.model';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-pessoa-listar',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class PessoaListarComponent implements OnInit {
 
   constructor(private pessoaService: PessoaService,
+              private toastr: ToastrService,
               private route: Router) { }
 
   pessoas: User[];
@@ -36,4 +38,14 @@ export class PessoaListarComponent implements OnInit {
     this.route.navigate(['/pessoa/'+pessoa.id]);
   }
 
+  remover(pessoa: User) {
+    this.pessoaService.removeUser(pessoa.id).subscribe(
+      () => {
+        this.toastr.success('Usuário removido!');
+      }
+    )
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000)
+  }
 }

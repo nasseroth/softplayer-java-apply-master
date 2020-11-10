@@ -23,6 +23,7 @@ import { PessoaModule } from './pages/pessoa/pessoa.module';
 import { NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { UsuarioModule } from './pages/usuario/usuario.module';
+import { ChatListarComponent } from './pages/chat/chat-listar/chat-listar/chat-listar.component';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { UsuarioModule } from './pages/usuario/usuario.module';
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    ChatListarComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

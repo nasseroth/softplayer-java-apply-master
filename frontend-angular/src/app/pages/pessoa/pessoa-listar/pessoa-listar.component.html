@@ -38,6 +38,7 @@
                 <th scope="col">SEXO</th>
                 <th scope="col"><button (click)="goToInserirPessoa()" class="btn btn-sm btn-primary"
                   style="color: white;">Inserir</button></th>
+                  <th>Remover</th>
               </tr>
             </thead>
             <tbody>
@@ -46,7 +47,10 @@
                 <th>{{pessoa.cpf}}</th>
                 <th>{{pessoa.sexo}}</th>
                 <th scope="col"><button (click)="alterarDados(pessoa)" class="btn btn-sm bg-gradient-danger"
-                  style="color: white;">Alterar</button></th>
+                  style="color: white;">Alterar</button>
+                <th scope="col"><button (click)="remover(pessoa)" class="btn btn-sm bg-gradient-danger"
+                    style="color: white;">Remover</button></th>
+
               </tr>
             </tbody>
           </table>

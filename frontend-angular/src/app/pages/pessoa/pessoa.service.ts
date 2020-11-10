@@ -8,6 +8,7 @@ const urlApiInserirUser = 'http://localhost:8080/api/ti/usuario/administrador/';
 const urlApiAlterar = 'http://localhost:8080/api/auth/alterar';
 const urlApiInserir = 'http://localhost:8080/api/auth/signup';
 const urlApiConsultar = 'http://localhost:8080/api/auth/usuario/';
+const urlApiExcluir = 'http://localhost:8080/api/ti/usuario/administrador';
 
 @Injectable({
   providedIn: 'root'
@@ -42,6 +43,13 @@ export class PessoaService {
       headers: new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'))
     };
     return this.http.get<User>(urlApiConsultar+id, options);
+  }
+
+  removeUser(id: number) {
+    let options = {
+      headers: new HttpHeaders().set('Authorization', "Bearer "+localStorage.getItem('token'))
+    }
+    return this.http.delete<User>(urlApiExcluir+'/excluir/'+id, options);
   }
 
 }

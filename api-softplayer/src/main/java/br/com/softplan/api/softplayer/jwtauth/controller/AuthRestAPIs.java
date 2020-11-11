@@ -119,12 +119,5 @@ public class AuthRestAPIs {
     	user.setPassword(encoder.encode(password));
     	return userRepository.save(user);
     }
-    
-    @PostMapping(value="/alterar/senha")
-    public User alterarPassword(@RequestBody User user) {
-    	String password = user.getPassword();
-    	user.setPassword(encoder.encode(password));
-    	return userRepository.save(user);
-    }
 
 }

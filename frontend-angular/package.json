@@ -1,5 +1,5 @@
 {
-  "name": "argon-dashboard-angular",
+  "name": "docker-softplayer",
   "version": "1.0.1",
   "scripts": {
     "ng": "ng",
@@ -65,9 +65,20 @@
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "1.4.0",
     "node-sass": "^4.13.1",
+    "nodemon": "^2.0.6",
     "protractor": "5.4.2",
     "ts-node": "8.0.2",
     "tslint": "5.12.1",
     "typescript": "3.2.4"
-  }
+  },
+  "description": "Softplayer",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "keywords": [
+    "Docker"
+  ],
+  "author": "Nasser",
+  "license": "ISC"
 }

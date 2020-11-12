@@ -19,5 +19,8 @@ public interface ChatRepository extends JpaRepository<ChatInterno, Long>{
 	/*
 	@Query("SELECT c FROM ChatInterno c WHERE c.idUsuarioDestinatario = :destID AND c.idUsuarioRementente = :remeID ORDER BY c.dataEnvio")
 	public List<ChatInterno> obterMensagens(@Param("remeID") Long remetente, @Param("destID") Long destinatario);*/
-	
+
+
+	@Query("SELECT c FROM ChatInterno c WHERE c.idUsuarioRementente = :remeID OR c.idUsuarioDestinatario = :remeID ORDER BY c.dataEnvio")
+	public List<ChatInterno> todasMsg(@Param("remeID") Long idRemetente);
 }

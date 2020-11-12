@@ -30,6 +30,14 @@ public class ChatController {
 	@Autowired
 	private ChatService chatService;
 	
+	
+	@PreAuthorize("hasAnyRole('ADMIN')")
+    @GetMapping(value="/todas-mensagens/{idRemetente}")
+	@ApiOperation(value = "Faz o envio de as mensagens de 1 remetente")
+    public ResponseEntity<List<ChatInterno>> todasMensagens(@PathVariable("idRemetente") Long idRemetente) {
+		return ResponseEntity.ok().body(chatService.todasMsg(idRemetente));
+    }
+	
 	@PreAuthorize("hasAnyRole('ADMIN')")
     @PostMapping(value="/enviar-mensagem")
 	@ApiOperation(value = "Faz o envio de uma mensagem")

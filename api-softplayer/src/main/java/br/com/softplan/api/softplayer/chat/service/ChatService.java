@@ -19,14 +19,11 @@ public class ChatService {
 	
 	@Autowired
 	private ChatRepository chatRepository;
-
-	@Autowired
-	private UsuarioService usuarioService;
 	
 	public ChatInterno enviarMsg(ChatInterno chat) {
 		if(chat.getIdUsuarioRementente().equals(chat.getIdUsuarioDestinatario())
-				|| !usuarioService.usuarioExiste(chat.getIdUsuarioDestinatario())
-				|| !usuarioService.usuarioExiste(chat.getIdUsuarioRementente())) {
+				|| chat.getIdUsuarioDestinatario().equals(null)
+				|| chat.getIdUsuarioRementente().equals(null)) {
 			return null;
 		}
 		chat.setDataEnvio(new DateUtil().getDataHoraAtual());
@@ -35,5 +32,9 @@ public class ChatService {
 
 	public List<ChatInterno> msgEnviadas(Long idRemetente, Long idDestinatario) {
 		return chatRepository.obterMensagens(idRemetente, idDestinatario);
+	}
+	
+	public List<ChatInterno> todasMsg(Long idRemetente) {
+		return chatRepository.todasMsg(idRemetente);
 	}
 }

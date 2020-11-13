@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -25,6 +25,7 @@ import { NgxCurrencyModule } from 'ngx-currency';
 import { UsuarioModule } from './pages/usuario/usuario.module';
 import { ChatListarComponent } from './pages/chat/chat-listar/chat-listar/chat-listar.component';
 import { MensagemComponent } from './pages/chat/mensagem/mensagem/mensagem.component';
+import { NovaMensagemComponent } from './pages/chat/nova-mensagem/nova-mensagem/nova-mensagem.component';
 
 @NgModule({
   imports: [
@@ -45,14 +46,16 @@ import { MensagemComponent } from './pages/chat/mensagem/mensagem/mensagem.compo
     PessoaModule,
     NgxMaskModule.forRoot(),
     NgxCurrencyModule,
-    UsuarioModule
+    UsuarioModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
     ChatListarComponent,
-    MensagemComponent
+    MensagemComponent,
+    NovaMensagemComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

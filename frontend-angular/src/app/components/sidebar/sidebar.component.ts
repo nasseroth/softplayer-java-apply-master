@@ -11,6 +11,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
     { path: '/pessoa', title: 'Pessoa',  icon: 'ni-circle-08 text-blue', class: '' },
     { path: '/chat', title: 'Chat Interno',  icon: 'ni-circle-08 text-blue', class: '' },
+    { path: '/nova-mensagem', title: 'Nova Mensagem',  icon: 'ni-circle-08 text-blue', class: '' },
 ];
 
 @Component({

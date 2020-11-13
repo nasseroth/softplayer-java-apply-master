@@ -58,6 +58,10 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/pessoa']);
   }
 
+  goToNovaMensagem() {
+    this.router.navigate(['/nova-mensagem']);
+  }
+
   goToChat() {
     this.router.navigate(['/chat']);
   }

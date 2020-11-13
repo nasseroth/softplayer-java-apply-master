@@ -15,6 +15,7 @@ import { PessoaListarComponent } from './pages/pessoa/pessoa-listar/pessoa-lista
 import { PessoaCadastrarComponent } from './pages/pessoa/pessoa-cadastrar/pessoa-cadastrar.component';
 import { AuthGuard } from './auth.guard';
 import { MensagemComponent } from './pages/chat/mensagem/mensagem/mensagem.component';
+import { NovaMensagemComponent } from './pages/chat/nova-mensagem/nova-mensagem/nova-mensagem.component';
 
 const routes: Routes =[
   {
@@ -39,6 +40,7 @@ const routes: Routes =[
       { path: 'pessoa/novo', component: PessoaCadastrarComponent },
       { path: 'chat', component: ChatListarComponent },
       { path: 'mensagem', component: MensagemComponent },
+      { path: 'nova-mensagem', component: NovaMensagemComponent },
     ]
   },
 

@@ -20,9 +20,10 @@
         <div class="pl-lg-4">
           <div class="row">
             <div class="form-group">
-              <label for="exampleFormControlSelect1">Mensagem para: </label>
-              <select class="form-control" id="usuario">
-                <option *ngFor="let opcao of usuarios" [value]="opcao.id" selected>
+              <label class="form-control-label">Mensagem para: </label>
+              <select class="form-control" [(ngModel)]="id">
+                <option *ngFor="let opcao of usuarios" selected class="form-control"
+                [ngValue]="opcao.id" class="form-control" for="id">
                   {{opcao.username}}</option>
               </select>
             </div>

@@ -45,4 +45,8 @@ public class UsuarioService {
 	public String buscaUsernamePorId(Long id) {
 		return usuarioRepository.findUsernameById(id);
 	}
+	
+	public Long buscaIdPorUsername(String username) {
+		return usuarioRepository.findIdByUsername(username);
+	}
 }

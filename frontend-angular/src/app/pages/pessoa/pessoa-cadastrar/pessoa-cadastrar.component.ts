@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../usuario/model/user.model';
 import { PessoaService } from '../pessoa.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-pessoa-cadastrar',

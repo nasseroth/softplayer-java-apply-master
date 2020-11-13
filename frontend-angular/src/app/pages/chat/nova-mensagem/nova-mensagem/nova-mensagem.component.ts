@@ -19,24 +19,24 @@ export class NovaMensagemComponent implements OnInit {
   usuarios = [];
   chat: Chat = new Chat();
   usuario: User = new User();
+  retorno = [];
   idString: string;
   idNumber: number;
   idDest: string;
   mensagemEnvio: string;
+  id: any;
 
   ngOnInit() {
     this.searchUsuarios();
   }
 
   submitChat() {
-    var e = document.getElementById('usuario');
     this.chat.idUsuarioRementente = localStorage.getItem('id');
     this.chat.mensagem = this.mensagemEnvio;
-    this.chat.idUsuarioDestinatario = String(this.usuario.id);
-    console.log('> '+this.chat.idUsuarioDestinatario);
+    this.chat.idUsuarioDestinatario = this.id;
     this.chatService.enviarMensagem(this.chat).subscribe(
       () => {
-        this.toastr.success('Cadastrado com sucesso!');
+        this.toastr.success('Mensagem enviada com sucesso!');
       }
     ),
     setTimeout(() => {
@@ -59,5 +59,4 @@ export class NovaMensagemComponent implements OnInit {
 
     return usuariosArr;
   }
-
 }

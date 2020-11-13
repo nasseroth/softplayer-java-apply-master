@@ -41,11 +41,4 @@ public class UsuarioController {
 		usuarioService.deletar(id);
 		return ResponseEntity.noContent().build();
 	}
-
-	@PreAuthorize("hasRole('ROLE_ADMIN')")
-	@RequestMapping(value = "/busca-id/{username}", method = RequestMethod.GET)
-	@ApiOperation(value = "Busca ID por Username")
-	public Long buscaIdPorUsername(@PathVariable String username) {
-		return usuarioService.buscaIdPorUsername(username);
-	}
 }

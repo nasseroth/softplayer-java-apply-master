@@ -31,17 +31,22 @@ export class NovaMensagemComponent implements OnInit {
   }
 
   submitChat() {
+    var select = document.querySelector('select');
+    var option = select.children[select.selectedIndex];
+    var usernameObtido = option.textContent;
+    console.log('retorno> '+this.id);
+    console.log('us> '+usernameObtido);
     this.chat.idUsuarioRementente = localStorage.getItem('id');
     this.chat.mensagem = this.mensagemEnvio;
     this.chat.idUsuarioDestinatario = this.id;
     this.chatService.enviarMensagem(this.chat).subscribe(
       () => {
-        this.toastr.success('Mensagem enviada com sucesso!');
+        this.toastr.success('Cadastrado com sucesso!');
       }
     ),
     setTimeout(() => {
       window.location.reload();
-      }, 10000);
+      }, 1000);
     }
 
 

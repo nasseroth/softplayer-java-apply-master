@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import br.com.softplan.api.softplayer.chat.model.ChatInterno;
 import br.com.softplan.api.softplayer.jwtauth.model.User;
 
 @Repository
@@ -19,6 +18,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("select u from User u where u.id = ?1")
 	User findByIdUser(Long id);
     
+    @Query("select u.username from User u where u.id = ?1")
+	String findUsernameById(Long id);
     
 	@Query("SELECT u FROM User u WHERE u.id = :ID")
 	public User usuarioExiste(@Param("ID") Long id);

@@ -27,13 +27,13 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          <h3 class="mb-0">Chat - Não implementado (apenas backend)</h3>
+          <h3 class="mb-0">Chat Interno</h3>
         </div>
         <div class="card w-100">
-          <div class="card-body">
-            <h5 class="card-title">Suas mensagens com fulano</h5>
-            <p class="card-text">Clique aqui para ver todas suas mensagens com {{fulano}}</p>
-            <a href="#" class="btn btn-primary">Ver Mensagens</a>
+          <div class="card-body" *ngFor="let chat of chats" >
+            <h5 class="card-title">Suas mensagens com {{chat.usernameDestinatario.toLocaleUpperCase()}}</h5>
+            <p class="card-text">Clique aqui para ver todas as suas mensagens</p>
+            <a  (click)="goToChat(chat.idUsuarioDestinatario)" class="btn btn-primary">Ver Mensagens</a>
           </div>
         </div>
 

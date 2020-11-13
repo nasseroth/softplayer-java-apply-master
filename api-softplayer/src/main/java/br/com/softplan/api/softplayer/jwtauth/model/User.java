@@ -2,6 +2,7 @@ package br.com.softplan.api.softplayer.jwtauth.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -60,6 +61,7 @@ public class User{
     private String password;
     
     @CPF(message = "CPF inválido")
+    @Column(unique = true)
     private String cpf;
     
     private String dataCadastro = new DateUtil().getDataHoraAtual();

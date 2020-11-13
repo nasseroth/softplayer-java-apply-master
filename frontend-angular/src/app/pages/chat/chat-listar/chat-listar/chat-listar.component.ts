@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/pages/dashboard/model/user.model';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { Chat } from '../../model/chat.model';
 import { ChatService } from './../../chat.service';
 @Component({
@@ -10,9 +10,8 @@ import { ChatService } from './../../chat.service';
 export class ChatListarComponent implements OnInit {
 
   chats: Chat[];
-
-  constructor(private chatService: ChatService) { }
-
+  idDestinatarioRegistro: number;
+  constructor(private chatService: ChatService, private router: Router) { }
 
   ngOnInit() {
     this.loadChats(localStorage.getItem('id'));
@@ -25,5 +24,11 @@ export class ChatListarComponent implements OnInit {
         this.chats = chats;
       }
     )
+  }
+
+  goToChat(idDestinatarioEnviado: number) {
+    this.idDestinatarioRegistro = idDestinatarioEnviado;
+    localStorage.setItem('idDest', idDestinatarioEnviado.toString());
+    this.router.navigate(['/mensagem']);
   }
 }

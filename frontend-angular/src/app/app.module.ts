@@ -24,6 +24,7 @@ import { NgxMaskModule } from 'ngx-mask';
 import { NgxCurrencyModule } from 'ngx-currency';
 import { UsuarioModule } from './pages/usuario/usuario.module';
 import { ChatListarComponent } from './pages/chat/chat-listar/chat-listar/chat-listar.component';
+import { MensagemComponent } from './pages/chat/mensagem/mensagem/mensagem.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { ChatListarComponent } from './pages/chat/chat-listar/chat-listar/chat-l
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    ChatListarComponent
+    ChatListarComponent,
+    MensagemComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,9 +6,9 @@ import { User } from '../dashboard/model/user.model';
 
 const urlApiObterChat = 'https://softplan-softplayer.herokuapp.com/api/ti/chat/todas-mensagens/';
 const urlApiObterMensagem = 'https://softplan-softplayer.herokuapp.com/api/ti/chat/receber-mensagem/';
-const urlApiEnviarMensagem = 'http://localhost:8080/api/ti/chat/enviar-mensagem';
+const urlApiEnviarMensagem = 'https://softplan-softplayer.herokuapp.com/api/ti/chat/enviar-mensagem';
 const urlApiTodosUsuarios = 'https://softplan-softplayer.herokuapp.com/api/ti/usuario/administrador';
-const urlApiBuscarIdPorUsername = 'http://localhost:8080/api/ti/usuario/administrador/busca-id/';
+const urlApiBuscarIdPorUsername = 'https://softplan-softplayer.herokuapp.com/api/ti/usuario/administrador/busca-id/';
 
 @Injectable({
   providedIn: 'root'
